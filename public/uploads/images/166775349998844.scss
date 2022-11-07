@@ -1,0 +1,125 @@
+@import '../../../../assets/styles/core/core_styles.scss';
+
+$width_md: 60%;
+$width_lg: 45%;
+$width_xl: 35%;
+$width_xxl: 552px;
+$time_animation: .2s;
+$type_animation: ease-in;
+
+.bb--side-modal-contianer{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 20;
+    position: fixed;
+    top: 0;
+}
+
+
+@keyframes sideLeftMd{
+    from{
+        left: $width_md;
+    }
+    to{
+        left: 0%;
+    }
+}
+
+@keyframes sideLeftLg{
+    from{
+        left: $width_lg;
+    }
+    to{
+        left: 0%;
+    }
+}
+
+@keyframes sideLeftXxl{
+    from{
+        left: $width_xxl;
+    }
+    to{
+        left: 0%;
+    }
+}
+
+
+.bb--side-modal{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: right;
+    background-color: white;
+    box-shadow: 0 3px 5px 0 rgba(130, 167, 217, 0.32);
+}
+
+.bb--side-modal-header{
+    height: 64px;
+    position: sticky;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+}
+
+.bb--side-modal-content{
+    padding: 0 24px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.bb--side-modal-footer{
+    width: inherit;
+    height: 64px;
+    padding: 8px 24px;
+    position: fixed;
+    bottom: 0;
+}
+
+.bb--side-modal-header-icon-close{
+    margin-right: 24px;
+}
+
+.bb--close{
+    cursor: pointer;
+    font-size: 16px;
+    color: $interactive-02;
+}
+
+@media only screen and (min-width: 768px) {
+    .bb--side-modal{
+        width: 60%;
+        right: 0;
+        border-radius: 12px 0 0 12px;
+        animation: sideLeftMd $time_animation $type_animation;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .bb--side-modal{
+        width: 45%;
+        right: 0;
+        border-radius: 12px 0 0 12px;
+        animation: sideLeftLg $time_animation $type_animation;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .bb--side-modal{
+        width: 35%;
+        right: 0;
+        border-radius: 12px 0 0 12px;
+        animation: sideLeftXl $time_animation $type_animation;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .bb--side-modal{
+        width: 552px;
+        right: 0;
+        border-radius: 12px 0 0 12px;
+        animation: sideLeftXxl $time_animation $type_animation;
+    }
+}
